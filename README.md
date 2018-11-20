@@ -1,6 +1,6 @@
 # Crazy randtest
 
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/acomagu/randtest)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/acomagu/randtest) [![CircleCI](https://img.shields.io/circleci/project/github/acomagu/randtest.svg?style=flat-square)](https://circleci.com/gh/acomagu/randtest)
 
 randtest controls the math/rand.Rand behavior from the Source for testing purpose.
 
