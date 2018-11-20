@@ -2,8 +2,9 @@ package randtest_test
 
 import (
 	"fmt"
-	"github.com/acomagu/randtest"
 	"math/rand"
+
+	"github.com/acomagu/randtest"
 )
 
 func ExampleMaxBehavior() {
