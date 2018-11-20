@@ -10,3 +10,9 @@ jobs:
     steps:
       - checkout
       - run: go test -race -v ./...
+      - run:
+          name: Send coverage
+          command: |
+            go get github.com/pierrre/gotestcover
+            gotestcover -coverprofile=coverage.txt ./...
+            bash <(curl -s https://codecov.io/bash)
