@@ -1,6 +1,7 @@
 package randtest
 
 import (
+	"reflect"
 	"runtime"
 	"unsafe"
 )
@@ -117,6 +118,13 @@ func (a *argtrace) backtrace(lbp uintptr, frames []runtime.Frame) {
 }
 
 func deref(p uintptr) (uintptr, bool) {
+	// `*(*unsafe.Pointer)(unsafe.Pointer(p))` will fault on darwin environment.
 	defer func() { recover() }()
-	return uintptr(*(*unsafe.Pointer)(unsafe.Pointer(p))), true
+	v := reflect.NewAt(reflect.TypeOf((*unsafe.Pointer)(nil)), unsafe.Pointer(p))
+	vv := reflect.Indirect(v)
+	if v == vv {
+		return 0, false
+	}
+
+	return uintptr(vv.Pointer()), true
 }
