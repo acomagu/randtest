@@ -20,4 +20,4 @@ func main() {
 }
 ```
 
-This is experimental package. It can break by updating Go because the logic is highly depends on undocumented behavior of math/rand package. Only tested on Go1.11.
+This is experimental package. It can be broken by updating Go because the logic is highly depends on undocumented behavior of math/rand package. Only tested on Go1.11.
